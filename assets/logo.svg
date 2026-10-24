@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Peak Property Gardening Services</title>
+  <desc id="desc">Circular green logo with a house, mountain and leaves</desc>
+  <circle cx="80" cy="80" r="76" fill="#fcfaf5" stroke="#174a31" stroke-width="5"/>
+  <circle cx="80" cy="80" r="68" fill="none" stroke="#b9d84a" stroke-width="2"/>
+  <path d="M40 64 64 35l13 17 11-13 32 35" fill="none" stroke="#174a31" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 65 80 47l23 18v24H58Z" fill="#fcfaf5" stroke="#174a31" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M74 89V70h13v19M65 70h6M91 70h6M65 79h6M91 79h6" fill="none" stroke="#174a31" stroke-width="3"/>
+  <path d="M35 68c-9-12-4-23 8-24 4 8 2 17-8 24Zm90 2c9-12 4-23-8-24-4 8-2 17 8 24Z" fill="#b9d84a" stroke="#174a31" stroke-width="3"/>
+  <path d="M35 67 47 53M125 69l-12-14" fill="none" stroke="#174a31" stroke-width="3"/>
+  <rect x="26" y="91" width="108" height="38" rx="6" fill="#174a31"/>
+  <text x="80" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="29" font-weight="900" letter-spacing="2" fill="#fff">PEAK</text>
+  <text x="80" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.7" font-weight="700" letter-spacing="1.4" fill="#dceca2">PROPERTY SERVICES</text>
+  <path d="M48 139h64" stroke="#174a31" stroke-width="3" stroke-linecap="round"/>
+</svg>
