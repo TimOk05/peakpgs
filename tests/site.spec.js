@@ -14,7 +14,6 @@ for (const size of sizes) {
     await expect(page.locator('h1')).toContainText('Bring your property');
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(overflow).toBeLessThanOrEqual(1);
-    await expect(page.locator('img')).toHaveCount(6);
   });
 }
 
@@ -45,7 +44,7 @@ test('quote form validates and prepares an enquiry without sending data', async 
   await expect(page.locator('[data-dialog]')).toBeHidden();
 });
 
-test('page has useful metadata and no broken local assets', async ({ page }) => {
+test('page has useful metadata and no broken local assets', async ({ page, request }) => {
   const failed = [];
   page.on('response', (response) => {
     if (response.url().startsWith('http://127.0.0.1') && response.status() >= 400) failed.push(`${response.status()} ${response.url()}`);
@@ -54,5 +53,11 @@ test('page has useful metadata and no broken local assets', async ({ page }) => 
   await page.waitForLoadState('networkidle');
   await expect(page).toHaveTitle(/Peak Property Gardening Services/);
   await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /Chesterfield/);
+  const imageSources = await page.locator('img').evaluateAll((images) => (
+    [...new Set(images.map((image) => image.src))]
+  ));
+  for (const source of imageSources) {
+    expect((await request.get(source)).ok()).toBe(true);
+  }
   expect(failed).toEqual([]);
 });

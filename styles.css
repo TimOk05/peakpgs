@@ -90,6 +90,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .brand { display: flex; align-items: center; gap: .8rem; min-width: 0; }
 .brand img { width: 58px; height: 58px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.16)); }
+.logo-placeholder { display: grid; flex: 0 0 auto; width: 58px; height: 58px; place-items: center; color: currentColor; background: rgba(255,255,255,.08); border: 1px dashed rgba(255,255,255,.62); border-radius: 50%; font-size: .56rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.site-header.is-scrolled .logo-placeholder { background: var(--cream); border-color: rgba(10,37,26,.38); }
 .brand-copy { display: grid; line-height: 1.05; }
 .brand-copy strong { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; letter-spacing: -.02em; }
 .brand-copy span { margin-top: .23rem; font-size: .63rem; font-weight: 700; letter-spacing: .115em; text-transform: uppercase; }
@@ -223,11 +225,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   gap: 1rem;
   min-height: 118px;
   border-bottom: 1px solid rgba(255,255,255,.16);
-  transition: color .5s ease, padding .55s cubic-bezier(.4,0,.2,1);
+  transition: color .5s ease;
 }
 .service-item::before { position: absolute; inset: 0 calc(var(--gutter) * -1); z-index: 0; content: ""; background: var(--leaf); transform: scaleY(0); transform-origin: top; transition: transform .75s cubic-bezier(.4,0,.2,1); }
 .service-item > * { position: relative; z-index: 1; }
-.service-item:hover, .service-item:focus-within { color: var(--pine-950); padding-inline: .75rem; }
+.service-item:hover, .service-item:focus-within { color: var(--pine-950); }
 .service-item:hover::before, .service-item:focus-within::before { transform: scaleY(1); }
 .service-number { align-self: start; padding-top: 2.1rem; color: rgba(255,255,255,.42); font-size: .68rem; font-weight: 800; transition: color .5s ease; }
 .service-item:hover .service-number { color: var(--pine-700); }
@@ -235,8 +237,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .service-item:hover .service-icon { color: var(--pine-950); border-color: rgba(10,37,26,.25); }
 .service-icon svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .service-item h3 { margin: 0 0 .25rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.55rem, 2.2vw, 2.2rem); font-weight: 400; letter-spacing: -.03em; }
-.service-item p { margin: 0; color: rgba(255,255,255,.58); font-size: .85rem; transition: color .5s ease; }
-.service-item:hover p { color: rgba(10,37,26,.7); }
+.service-item p { margin: 0; color: rgba(255,255,255,.64); font-size: .85rem; opacity: .8; transform: translateY(4px); transition: color .65s ease, opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
+.service-item:hover p, .service-item:focus-within p { color: rgba(10,37,26,.72); opacity: 1; transform: translateY(0); transition-delay: .18s; }
 .service-item > a { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; transition: border-color .5s ease; }
 .service-item:hover > a { border-color: var(--pine-950); }
 
@@ -358,7 +360,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   html { scroll-padding-top: 76px; }
   body { padding-bottom: 68px; }
   .site-header { padding-block: .55rem; }
-  .brand img { width: 52px; height: 52px; }
+  .brand img, .logo-placeholder { width: 52px; height: 52px; }
   .brand-copy span { display: block; }
   .menu-button { position: relative; z-index: 102; display: grid; width: 46px; height: 46px; padding: 11px; place-content: center; gap: 5px; color: currentColor; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28); border-radius: 50%; cursor: pointer; }
   .site-header.is-scrolled .menu-button { border-color: rgba(10,37,26,.16); background: var(--cream); }
@@ -441,4 +443,5 @@ button, a { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+  .service-item p { opacity: 1; transform: none; }
 }
