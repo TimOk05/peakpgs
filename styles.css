@@ -223,21 +223,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
   gap: 1rem;
   min-height: 118px;
   border-bottom: 1px solid rgba(255,255,255,.16);
-  transition: color .25s ease, padding .25s ease;
+  transition: color .5s ease, padding .55s cubic-bezier(.4,0,.2,1);
 }
-.service-item::before { position: absolute; inset: 0 calc(var(--gutter) * -1); z-index: 0; content: ""; background: var(--leaf); transform: scaleY(0); transform-origin: top; transition: transform .28s ease; }
+.service-item::before { position: absolute; inset: 0 calc(var(--gutter) * -1); z-index: 0; content: ""; background: var(--leaf); transform: scaleY(0); transform-origin: top; transition: transform .75s cubic-bezier(.4,0,.2,1); }
 .service-item > * { position: relative; z-index: 1; }
 .service-item:hover, .service-item:focus-within { color: var(--pine-950); padding-inline: .75rem; }
 .service-item:hover::before, .service-item:focus-within::before { transform: scaleY(1); }
-.service-number { align-self: start; padding-top: 2.1rem; color: rgba(255,255,255,.42); font-size: .68rem; font-weight: 800; }
+.service-number { align-self: start; padding-top: 2.1rem; color: rgba(255,255,255,.42); font-size: .68rem; font-weight: 800; transition: color .5s ease; }
 .service-item:hover .service-number { color: var(--pine-700); }
-.service-icon { display: grid; width: 54px; height: 54px; place-items: center; color: var(--leaf); border: 1px solid rgba(255,255,255,.18); border-radius: 50%; }
+.service-icon { display: grid; width: 54px; height: 54px; place-items: center; color: var(--leaf); border: 1px solid rgba(255,255,255,.18); border-radius: 50%; transition: color .5s ease, border-color .5s ease; }
 .service-item:hover .service-icon { color: var(--pine-950); border-color: rgba(10,37,26,.25); }
 .service-icon svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .service-item h3 { margin: 0 0 .25rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.55rem, 2.2vw, 2.2rem); font-weight: 400; letter-spacing: -.03em; }
-.service-item p { margin: 0; color: rgba(255,255,255,.58); font-size: .85rem; }
+.service-item p { margin: 0; color: rgba(255,255,255,.58); font-size: .85rem; transition: color .5s ease; }
 .service-item:hover p { color: rgba(10,37,26,.7); }
-.service-item > a { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; }
+.service-item > a { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; transition: border-color .5s ease; }
 .service-item:hover > a { border-color: var(--pine-950); }
 
 .work { display: grid; grid-template-columns: .74fr 1.26fr; min-height: 740px; padding-top: 0; padding-bottom: 0; padding-right: var(--edge); color: var(--white); background: var(--pine-800); }
